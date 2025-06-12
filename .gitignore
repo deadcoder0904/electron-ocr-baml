@@ -141,4 +141,8 @@ dist
 .yarn/install-state.gz
 .pnp.*
 
+# Repomix
 .repomix
+
+# BAML
+baml_client
