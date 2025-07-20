@@ -1,7 +1,7 @@
 generator typescript {
   output_type "typescript"
   output_dir "../"
-  version "0.89.0"
+  version "0.202.1"
 }
 
 class Quote {
@@ -21,7 +21,7 @@ client<llm> OpenRouter {
   provider openai-generic
   options {
     base_url "https://openrouter.ai/api/v1"
-    model "qwen/qwen2.5-vl-3b-instruct:free"
+    model "google/gemma-3-27b-it:free"
     api_key env.OPENROUTER_API_KEY
   }
 }
@@ -34,7 +34,7 @@ function ExtractTextFromImage(imageData: image) -> Quote {
   Dont use quotes in your response
   {{ ctx.output_format }}
   "#
-  client Gemini
+  client OpenRouter
 }
 
 test TestExtractTextFromImage {

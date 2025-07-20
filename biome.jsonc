@@ -1,0 +1,49 @@
+{
+  "$schema": "./node_modules/@biomejs/biome/configuration_schema.json",
+  "assist": {
+    "enabled": true,
+    "actions": {
+      "source": {
+        "organizeImports": "on"
+      }
+    }
+  },
+  "formatter": {
+    "enabled": true,
+    "formatWithErrors": false, // Optional: Decide if you want to format files even if they have syntax errors
+    "indentStyle": "tab",
+    "indentWidth": 1,
+    "lineWidth": 80,
+    "lineEnding": "lf"
+  },
+  "linter": {
+    "enabled": false, // <--- This is the crucial part to disable linting
+    "rules": {
+      "nursery": {
+        "useSortedClasses": "error"
+      }
+    }
+  },
+  // Optional: Specify which files Biome should consider (defaults are usually good)
+  "files": {
+    "includes": [
+      "**",
+      "!src/index.css",
+      "!node_modules",
+      "!out",
+      "!release",
+      "!build",
+      "!.yek",
+      "!.bank",
+      "!src/shared/baml_client",
+      "!src/routeTree.gen.ts"
+    ]
+  },
+  "javascript": {
+    "formatter": {
+      "quoteStyle": "single",
+      "semicolons": "asNeeded",
+      "arrowParentheses": "always"
+    }
+  }
+}

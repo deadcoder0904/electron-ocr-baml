@@ -1,5 +1,5 @@
-import { useState } from 'react'
 import log from 'electron-log/renderer'
+import { useState } from 'react'
 
 // Define the expected type for the extracted text response
 interface ExtractedText {
@@ -68,11 +68,12 @@ function App(): React.JSX.Element {
       {/* Main Content */}
       <main className="flex-1 flex flex-col items-center p-3 overflow-y-auto">
         <button
+          type="button"
           onClick={handleScreenshot}
           disabled={isLoading}
           className={`px-6 py-3 text-xl font-semibold bg-indigo-500 text-white border-none rounded-lg shadow-md ${isLoading ? 'cursor-not-allowed opacity-60' : 'cursor-pointer hover:bg-indigo-600 hover:shadow-lg'} transition-all duration-300 mb-6`}
         >
-          {isLoading ? 'Capturing...' : 'Take Screenshot & Extract Text'}
+          {isLoading ? 'Capturing...' : 'Take Screenshot & Extract Quote'}
         </button>
 
         {error && (
